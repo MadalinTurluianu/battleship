@@ -9,3 +9,10 @@ it("hit a ship", () => {
   ship.hit();
   expect(ship.timesHit).toBe(1);
 })
+
+it("sink a ship when timesHit = length", () => {
+  const ship = new Ship(2);
+  ship.hit();
+  ship.hit();
+  expect(ship.sunk).toBe(true);
+})
