@@ -12,11 +12,8 @@ export class Ship {
     }
   }
 
-  hit(position) {
-    if (this.positions.includes(position)) {
-      this.timesHit += 1;
-
-      this.isSunk();
-    }
+  hit() {
+    this.timesHit += 1;
+    this.isSunk();
   }
 }
