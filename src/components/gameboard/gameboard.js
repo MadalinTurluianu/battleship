@@ -9,7 +9,9 @@ export class Gameboard {
     const sunkShips = this.ships.filter((ship) => ship.sunk === true);
 
     if (sunkShips.length === this.ships.length) {
-      return "all ships sunk";
+      return true;
+    }else {
+      return false;
     }
   }
 
@@ -20,10 +22,7 @@ export class Gameboard {
 
     if (attackedShip.length === 1) {
       attackedShip[0].hit();
-
-      this.checkAllShipsSunk();
-
-      return "hit";
+      return (this.checkAllShipsSunk() ? "all ships sunk" : "hit")
     } else {
       return "water";
     }

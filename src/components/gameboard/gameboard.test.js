@@ -19,7 +19,11 @@ it("should receive an attack and see if it's water or a ship was hit", () => {
   expect(board.receiveAttack(2)).toBe("hit");
   expect(board.receiveAttack(8)).toBe("water");
 
-  expect(board.receiveAttack(3)).toBe("all ships sunk");
+  board.receiveAttack(4);
+  board.receiveAttack(5);
+  board.receiveAttack(6);
 
-  expect(board.ships[0].sunk).toBe(true);
+  expect(board.ships[1].sunk).toBe(true);
+
+  expect(board.receiveAttack(3)).toBe("all ships sunk");
 });
