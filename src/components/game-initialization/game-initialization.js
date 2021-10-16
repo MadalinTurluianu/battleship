@@ -2,6 +2,11 @@ export function gameInitialization() {
 
   const gamePage = document.createElement("section")
   gamePage.className = "game-page";
+
+  const message = document.createElement("h2");
+  message.className = "message";
+
+  gamePage.appendChild(message);
   
   const playerBoard = document.createElement("div");
   playerBoard.className = "player-board";
@@ -19,5 +24,8 @@ export function gameInitialization() {
     computerBoard.appendChild(computerCell);
   }
 
-  return gamePage;
+  gamePage.appendChild(playerBoard);
+  gamePage.appendChild(computerBoard);
+
+  return {gamePage, message, playerBoard, computerBoard};
 }
