@@ -1,12 +1,30 @@
 import { Gameboard } from "./components/gameboard/gameboard";
 import { Player } from "./components/player/player";
 
-import "./components/pre-game-initialization/pre-game-initialization.css";
-import { preGameInitialization} from './components/pre-game-initialization/pre-game-initialization';
-import { gameInitialization} from './components/game-initialization/game-initialization';
+import "./pages/select-name-page/select-name-page.css";
+import { selectNamePage} from './pages/select-name-page/select-name-page';
+
+import "./pages/create-gameboard-page/create-gameboard-page.css";
+import { createGameboardPage } from "./pages/create-gameboard-page/create-gameboard-page";
 
 const body = document.querySelector("body");
 
-const preGamePage = preGameInitialization();
+const initialPage = selectNamePage();
+const boardConfPage = createGameboardPage();
 
-body.appendChild(preGamePage.section);
+/* initialPage.button.addEventListener("click", function() {
+  let playerName = initialPage.input.value.trim();
+
+  if(playerName !== "") {
+    body.removeChild(initialPage.section);
+    body.appendChild(boardConfPage.playerBoard);
+  }
+
+  initialPage.input.value = "";
+})
+
+body.appendChild(initialPage.section);
+ */
+
+body.appendChild(boardConfPage.emptyBoard)
+

@@ -1,0 +1,11 @@
+.player-board {
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  width: 80vw;
+}
+
+.player-cell{
+  border: 1px solid black;
+  width: 8vw;
+  height: 8vw;
+}

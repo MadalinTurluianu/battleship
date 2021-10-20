@@ -1,7 +1,7 @@
 import { Ship } from "../ship/ship";
 
 export class Gameboard {
-  constructor(...args) {
+  constructor(args) {
     this.ships = args.map((coords) => new Ship(coords));
   }
 

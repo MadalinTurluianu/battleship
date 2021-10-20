@@ -1,4 +1,4 @@
-export function preGameInitialization() {
+export function selectNamePage() {
 
   const section = document.createElement("section")
   section.className = "pre-game-page";
@@ -15,16 +15,5 @@ export function preGameInitialization() {
   button.textContent = "Submit";
   section.appendChild(button);
 
-  const playerBoard = document.createElement("div");
-  playerBoard.className = "player-board board";
-
-  for (let i=0; i<100; i++) {
-    let playerCell = document.createElement("div");
-    playerCell.className = "player-cell";
-    playerBoard.appendChild(playerCell);
-  }
-
-  section.appendChild(playerBoard);
-
-  return {section, h2, playerBoard, button, input};
+  return {section, h2, button, input};
 }
