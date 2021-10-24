@@ -1,8 +1,16 @@
 import { Gameboard } from "../../components/gameboard/gameboard";
 
 export function createGameboardPage() {
+  const page = document.createElement("section");
+  page.className = "create-gameboard-page";
+
   const emptyBoard = document.createElement("div");
   emptyBoard.className = "player-board";
+
+  const confirmBtn = document.createElement("button");
+  confirmBtn.textContent = "Confirm";
+  confirmBtn.className = "confirm-btn";
+
 
   for (let i = 0; i < 100; i++) {
     let playerCell = document.createElement("div");
@@ -63,5 +71,8 @@ export function createGameboardPage() {
     });
   }
 
-  return { emptyBoard, playerGameboard };
+  page.appendChild(emptyBoard);
+  page.appendChild(confirmBtn);
+
+  return { page, confirmBtn, boats, playerGameboard };
 }

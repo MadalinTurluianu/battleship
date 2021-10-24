@@ -26,5 +26,10 @@ const boardConfPage = createGameboardPage();
 body.appendChild(initialPage.section);
  */
 
-body.appendChild(boardConfPage.emptyBoard)
+body.appendChild(boardConfPage.page)
 
+boardConfPage.confirmBtn.addEventListener("click", function () {
+  if (boardConfPage.boats.length === 0) {
+    body.removeChild(boardConfPage.page);
+  }
+})
